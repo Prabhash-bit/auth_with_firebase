@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:newapp/verify_email.dart';
 import 'auth_service.dart';
 import 'home.dart';
 
@@ -56,9 +57,8 @@ class _CreateAccountState extends State<CreateAccount> {
                   password: password.text,
                 );
                 if (message!.contains('Success')) {
-                  // Navigator.of(context).pushReplacement(
-                  //     MaterialPageRoute(builder: (context) => Home()));
-
+                  Navigator.of(context).pushReplacement(
+                      MaterialPageRoute(builder: (context) => VerifyScreen()));
                 }
                 ScaffoldMessenger.of(context).showSnackBar(
                   SnackBar(

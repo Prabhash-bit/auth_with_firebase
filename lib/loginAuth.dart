@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:cool_alert/cool_alert.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
+import 'package:newapp/reset.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import 'auth_service.dart';
@@ -299,6 +300,19 @@ class _LoginAuthPageState extends State<LoginAuthPage> {
                     );
                   },
                   child: const Text('Create Account'),
+                ),
+                SizedBox(
+                  height: 10,
+                ),
+                TextButton(
+                  onPressed: () {
+                    Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (context) => ResetScreen(),
+                      ),
+                    );
+                  },
+                  child: const Text('Forget password?'),
                 ),
                 Text(
                   "Note: Please contact HR if you forget your password.",
